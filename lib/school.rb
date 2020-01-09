@@ -5,27 +5,17 @@ class School
    @roster = {}
   end
  
-  def roster
-    @roster 
-  end
+  attr_reader :roster, :name
  
-  def name
-    @name
-  end
- 
-  def name=(new_name)
-    @name = new_name
-  end
- 
-  def add_student (name, grade)
-      if @roster[grade] == nil
-        @roster[grade] = []
-      end
-      @roster[grade] << name
-  end
-  
   def grade(grade)
     @roster[grade]
+  end
+  
+  def add_student (name, grade)
+    if @roster[grade] == nil
+      @roster[grade] = []
+    end
+    @roster[grade] << name
   end
   
   def sort
